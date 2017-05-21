@@ -36,8 +36,8 @@ class Proxy(object):
                 validity = self.checkValidity(_type, proxy)
                 if validity == True:
                     self.r.lpush(_type, proxy)
-                    print '1 proxy added: %s. http: %d; https: %s.' \
-                            %(proxy, self.r.llen('http'), self.r.llen('https'))
+                    print('1 proxy added: %s. http: %d; https: %s.' \
+                            %(proxy, self.r.llen('http'), self.r.llen('https')))
             self.__class__.llen += self.r.llen('http') + self.r.llen('https')
 
     def checkValidity(self, _type, proxy):
@@ -93,4 +93,4 @@ class Proxy(object):
         while True:
             self.fillProxyPool()
             time.sleep(10)
-            print "update..."
+            print("update...")
